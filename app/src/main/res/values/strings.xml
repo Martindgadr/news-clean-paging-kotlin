@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NewsCleanArchKotlin</string>
+    <string name="textTest">Tocar boton para llamar a servicio de noticias</string>
+    <string name="login_screen_title">News</string>
+    <string name="newsTitle">News title here...</string>
+    <string name="img_cont_desc">Image from news displayed</string>
+    <string name="categoryNews">News by category</string>
+</resources>

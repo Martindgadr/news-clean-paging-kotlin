@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countre_code">
+        <item>ar</item>
+        <item>br</item>
+        <item>ca</item>
+        <item>ch</item>
+        <item>fr</item>
+        <item>it</item>
+        <item>mx</item>
+        <item>no</item>
+        <item>nz</item>
+        <item>ru</item>
+        <item>us</item>
+        <item>ve</item>
+    </string-array>
+
+    <string-array name="news_categories">
+        <item>business</item>
+        <item>entertainment</item>
+        <item>general</item>
+        <item>health</item>
+        <item>science</item>
+        <item>sports</item>
+        <item>technology</item>
+    </string-array>
+</resources>
