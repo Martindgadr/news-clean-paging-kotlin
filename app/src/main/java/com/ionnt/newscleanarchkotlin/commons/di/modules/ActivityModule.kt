@@ -3,6 +3,7 @@ package com.ionnt.newscleanarchkotlin.commons.di.modules
 import com.ionnt.newscleanarchkotlin.commons.di.annotations.ActivityScope
 import com.ionnt.newscleanarchkotlin.navigations.InitialActivity
 import com.ionnt.newscleanarchkotlin.ui.news.NewsActivity
+import com.ionnt.newscleanarchkotlin.ui.newsdetail.NewsDetailActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -19,4 +20,8 @@ abstract class ActivityModule {
     @ContributesAndroidInjector
     @ActivityScope
     abstract fun contributeInitialActivity(): InitialActivity
+
+    @ContributesAndroidInjector(modules = [(FragmentModule::class)])
+    @ActivityScope
+    abstract fun contributeNewsDetailActivity(): NewsDetailActivity
 }

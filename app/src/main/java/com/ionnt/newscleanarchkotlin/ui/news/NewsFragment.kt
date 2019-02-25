@@ -31,7 +31,7 @@ class NewsFragment: BaseFragment() {
     private lateinit var viewModel: NewsViewModel
     private lateinit var newsByCategoryAdapter: NewsByCategoryAdapter
     private lateinit var headlineNewsAdapter: HeadlineNewsAdapter
-    private var selectedCountry: String = "us"
+    private var selectedCountry: String = "ar"
     private var selectedCategory: String = "business"
     private var isAdapterHeadlines: Boolean = true
 
@@ -42,6 +42,7 @@ class NewsFragment: BaseFragment() {
 
         setHasOptionsMenu(true)
         viewModel = ViewModelProviders.of(requireActivity(), viewModelFactory).get(NewsViewModel::class.java)
+        loadInitialData()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -106,6 +107,11 @@ class NewsFragment: BaseFragment() {
         return true
     }
 
+    private fun loadInitialData() {
+        if (isAdapterHeadlines) viewModel.getNewsHeadlinesArticles(selectedCountry)
+        else viewModel.getNewsByCategory(selectedCategory)
+    }
+
     private fun headlinesNews(articlesList: List<Articles>) {
         headlineNewsAdapter.setListData(articlesList)
         frameProgress.invisible()
@@ -116,8 +122,7 @@ class NewsFragment: BaseFragment() {
     }
 
     private fun itemClicked(item: Articles) {
-        // Something to do when item was clicked / Show Details long
-        Log.i("Item Clicked", "Item is: $item")
+        navigator.showNewsDetail(requireContext(), item)
     }
 
     private fun handleError(failure: Failure) {

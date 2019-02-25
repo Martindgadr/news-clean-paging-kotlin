@@ -6,6 +6,6 @@ package com.ionnt.newscleanarchkotlin.commons.utils
 
 class Constants {
     companion object {
-        const val AUTH_HEADER_API_KEY = "your API key here" // https://newsapi.org/
+        const val AUTH_HEADER_API_KEY = "d75d4d892a7b401dbe3b11403bf603ca" // https://newsapi.org/
     }
 }
