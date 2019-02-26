@@ -29,7 +29,8 @@
 
         <activity
                 android:name=".ui.newsdetail.NewsDetailActivity"
-                android:label="@string/login_screen_title">
+                android:label="@string/login_screen_title"
+                android:theme="@style/noBar">
         </activity>
     </application>
 

@@ -42,6 +42,13 @@ class NewsFragment: BaseFragment() {
 
         setHasOptionsMenu(true)
         viewModel = ViewModelProviders.of(requireActivity(), viewModelFactory).get(NewsViewModel::class.java)
+
+        savedInstanceState?.let { bundle ->
+            bundle.getString("countryCode")?.let { selectedCountry = it }
+            bundle.getString("categoryCode")?.let { selectedCategory = it }
+            isAdapterHeadlines = bundle.getBoolean("isHeadline")
+        }
+
         loadInitialData()
     }
 
@@ -57,12 +64,6 @@ class NewsFragment: BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        savedInstanceState?.let { bundle ->
-            bundle.getString("countryCode")?.let { selectedCountry = it }
-            bundle.getString("categoryCode")?.let { selectedCategory = it }
-            isAdapterHeadlines = bundle.getBoolean("isHeadline")
-        }
 
         initAdapters()
         setupSpinners()
